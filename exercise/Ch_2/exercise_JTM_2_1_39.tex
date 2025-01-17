@@ -1,0 +1,142 @@
+Intrinsic properties for inner product
+As we observing an inner product $\langle f, g\rangle$ in a vector space V with dimension d, and $f,g \in V$. which means f and g are two different elements in space V. Assume there exist complex number c, following properties is natural to inner product by definition.
+\begin{CJK*}{UTF8}{bsmi}
+\end{CJK*}
+
+\begin{enumerate}
+    \item Symmetry: Generally, $\langle f, g\rangle=\langle\overline{g, f}\rangle$ 
+    \item Linearity: $\langle cf, g\rangle=c^{*}\langle{f, g}\rangle$
+    \item Positive definite:  $\langle f, f\rangle\geq 0$ 
+\end{enumerate}
+If you don't believe in this,and you want to prove they are wrong, you must eventually proving that they are right. Therefore, I decide to treat them as facts instead of arguments that are debatable here. 
+In conclusion If we want to define any inner product function i.e. the function has the same mathematical structure to inner product which intrinsically should satisfy above-mentioned three properties, if and only if, the inner product function do not violate any of them.
+
+For equestion (1)\\
+According to the description, it offered the definition about the inner product(trace inner product) about two elements A and B(A,B are matrices) in the given Hilbert space $Lv : V\rightarrow V$, where space V is a n dimensional hilbert space with vectors as its elements. So an arbitrary element A or B is a $n \times n$ matrix. (so far, concept of Hilbert space can be understood as a vector space that is able to be infinite dimensions and allow inner product related properties),
+
+\begin{equation}
+(A, B) \equiv \operatorname{tr}\left(A^{\dag} B\right)
+\end{equation}
+If we want to prove it is a inner product function, we need to check whether or not all three properties are satisfied for trace inner product.
+
+\begin{enumerate}
+    \item For Symmetry: 
+    \begin{equation}
+    \begin{aligned}
+    (A, B) & \equiv \operatorname{tr}\left(A^{\dag} B\right) \\
+    & =\sum_i \sum_k A_{ki}^* B_{ki} \\
+    & =\left(\sum_i \sum_k B_{ki}^* A_{ki}\right)^* = (B, A)^* 
+\end{aligned}
+\end{equation}
+because $(A_{i_k}^{\dag} = A_{k_i}^*) $ and if assume $ C=AB, C_{ij} = \sum_k A_{ik}B_{ki} $
+    \item For Linearity: 
+    \begin{equation}
+\begin{aligned}
+(c A, B) & =\operatorname{tr}\left((c A)^{\dag} B\right) \\
+& =\sum_i c^* C_{k i}^* B k i \\
+& =c^* \sum_k A_{k i}^* B k i=c^*(A, B)
+\end{aligned}
+\end{equation}
+    \item Last for Positive definite:  
+\begin{equation}
+\begin{aligned}
+(A, A)=\operatorname{tr}\left(A^{\dag} A\right) & =\sum_i \sum_k A_{ik}^{*} A_{ik} \\
+& =\sum_i \sum_k |A_{ik}|^2 \geq 0
+\end{aligned}
+\end{equation}
+\end{enumerate}
+
+For question(2)\\
+We know the square matrix in this Hilbert space $L_v$ is $n\times n$, therefore we can extend the concept of linearly independent from vectors, which means in space V,if$|v_i\rangle \neq |v_j\rangle$($i\neq j$) a group of linearly independently basis set must satisfy that, 
+\begin{equation}
+|v_i\rangle = 0\times|v_j\rangle
+\end{equation}
+that is $|v_i\rangle$ can not having non-trivial solution to any other basis vectors $|v_j\rangle$. So $|v_i\rangle$ is naturally can't be expressed as the linear combination about other basis vectors if they are linearly "independent". And the dimension about a given space is defined as the total number of its linearly independent basis vectors. For instance, there are n different basis vectors in space V because it is dimensioned-n.\\
+As for linearly independent \emph{matrices} we may say, if two basis matrix that have only trivial relation to each other are linearly independent, such as in space $L_x$: $W\rightarrow W$ where W is 2 dimensional euclidean space, for instance
+$\left[\begin{array}{ll}1 & 0 \\ 0 & 0\end{array}\right] = 0\times\left[\begin{array}{ll}0 & 1 \\ 0 & 0\end{array}\right]$ which implies there are four linearly independent matrices in 2 dimensional space.\\
+Therefore, $L_v$ is in $n^2$ dimension.
+
+For question(3)
+The last question often stands the hardest, no exception of this one. It require us to find a orthonormal hermitian basis set for $L_v$.\\
+The first idea is to recall the outer product of a matrix A.
+Assume A is a random square matrix in space V we can denote A as
+\begin{equation}
+    A = \sum_{i,j} A_{ij}|v_i\rangle\langle v_j|
+\end{equation}
+where $A_{ij} = \langle v_i|A|v_j\rangle$ and $|v_i\rangle$s is one orthonormal basis set in space V.
+Thus, we can know and define each of the $|v_i\rangle\langle v_j|$ is a linearly independent matrix. And we need further check 
+\begin{enumerate}
+    \item Orthogonal: Whether different two linearly independent matrix $|v_i_m\rangle\langle v_j_m|$ and  $|v_i_n\rangle\langle v_j_n|$ are orthogonal. 
+    \item Normalized: Whether each $|v_i_m\rangle\langle v_j_m|$ is normalized.
+    \item Hermitian: Whether each $|v_i_m\rangle\langle v_j_m|$ is hermitian.
+\end{enumerate}
+I add a new tag number(m and n) after i and j to emphasize the change for either $|v_i_m\rangle$ or $\langle v_j_m|$ would generate different matrix. As we can verify them follow such order.
+\begin{enumerate}
+    \item Orthogonal: we can use trace inner product to determine the whether two matrices obtain by method above are orthogonal \\
+    ($|v_i_m\rangle\langle v_j_m|\neq |v_i_n\rangle\langle v_j_n|$ i.e. $m \neq n$).
+    \begin{equation}
+    \begin{split}
+        (|v_i_m\rangle\langle v_j_m|,|v_i_n\rangle\langle v_j_n|) = \operatorname{tr}(|v_j_m\rangle\langle v_i_m|v_i_n\rangle\langle v_j_n|)
+    \end{split}
+    \end{equation}
+    if ($|v_i_m\rangle \neq|v_i_n\rangle $), $(|v_i_m\rangle\langle v_j_m|,|v_i_n\rangle\langle v_j_n|) =0$
+    else if ($|v_i_m\rangle =|v_i_n\rangle $), 
+    $\operatorname{tr}(|v_j_m\rangle\langle v_i_m|v_i_n\rangle\langle v_j_n|) =0$\\
+    noted that when ($|v_i_m\rangle =|v_i_n\rangle$ and $|v_j_m\rangle =|v_j_n\rangle$ though\\
+    $(|v_i_m\rangle\langle v_j_m|,|v_i_n\rangle\langle v_j_n|) = 1$ but it contradict to precondition that these two matrices are not the same!\\
+    Hence we proved that any two matrices in this basis are orthogonal.
+    \item Normalized: 
+    \begin{equation}
+    \begin{split}
+        (|v_i_m\rangle\langle v_j_m|,|v_i_m\rangle\langle v_j_m|) = \operatorname{tr}(|v_j_m\rangle\langle v_i_m|v_i_m\rangle\langle v_j_m|) = 1
+    \end{split}
+    \end{equation}
+    Each of them is indeed normalized.
+    \item Hermitian: for i=j $|v_i\rangle\langle v_i|$ is a hermitian($H = H^{\dag}$), but for $i\neq j$ $|v_i\rangle\langle v_j| \neq |v_j\rangle\langle v_i|$ therefore not hermitian.
+\end{enumerate}
+To fix the problem derived for only matrices on the main diagonal are hermitian(n matrix in total and we still need to find $n^2-n$ suitable matrices to form the basis set in $L_v$). Note that if we want to generate a another orthonormal basis set from any exist non-orthogonal basis set, if it is vector-wise we may apply Gram-Schmidt orthonormalization, or maybe we can add them up or minus them in pair and divide proper constant to normalize(mostly $\sqrt{2}$), such as we know the eigenvectors for $\sigma_z$ is $|0\rangle$ and $|1\rangle$ we can generate another basis by add or minus them in pair like, $\frac{|0\rangle + i|+\rangle}{\sqrt{2}} = |+i\rangle$ and $\frac{|0\rangle - i|+\rangle}{\sqrt{2} }= |-i\rangle$(actually $\sigma_y$'s eigenvectors).\\
+Through this view, we can try to generate those $i \neq j$ orthonormal basis matrix in this method as we define, 
+\begin{equation}
+   H_{+} = \frac{|v_i_m\rangle\langle v_j_m|+|v_j_m\rangle\langle v_i_m|}{\sqrt{2}}
+\end{equation}
+\begin{equation}
+   H_{-} = i(\frac{|v_i_n\rangle\langle v_j_n|+|v_j_n\rangle\langle v_i_n|}{\sqrt{2}})
+\end{equation}
+With a little thought you can easily prove they are both hermitian, then we need to further examine whether they are orthogonal and normalized, we first examine orthogonal.
+\begin{enumerate}
+    \item for $H_{+m}$ and $H_{+n}$(two different $H_{+}$), if ($i_m, j_m \neq I_n, j_n$ i.e. $H_{+m}\neqH_{+n}$)
+    \begin{equation}
+    \begin{align}
+        (H_{+m},H_{+n}) = \operatorname{tr}({H_{+m}}^{\dag}H_{+n}) = \frac{1}{2}\operatorname{tr}(|v_i_m\rangle\langle v_j_m|v_i_n\rangle\langle v_j_n|+&\\|v_i_m\rangle\langle v_j_m|v_j_n\rangle\langle v_j_n|+&\\|v_j_m\rangle\langle v_i_m|v_i_n\rangle\langle v_j_n|+&\\|v_j_m\rangle\langle v_i_m|v_j_n\rangle\langle v_j_n|) &= 0
+    \end{align}
+    \end{equation}
+    you can verify that indeed for four other conditions that are  $i_m \neq i_n and j_m = i_n or j_n$ and $j_m \neq j_n and i_m = i_n or j_n$ its trace inner product value would be 0. 
+    \item for $H_{-m}$ and $H_{-m}$(two different $H_{-}$)
+    Similarly, you can prove two different $H_{-}$s are orthogonal. 
+    \item for $H_{+}$ and $H_{-}$(between $H_{+}$ and $H_{-}$)
+    \begin{equation}
+    \begin{align}
+        (H_{+},H_{-}) = \operatorname{tr}({H_{+}}^{\dag}H_{-}) = \frac{1}{2}\operatorname{tr}(|v_j\rangle\langle v_j|-|v_i\rangle\langle v_i|) &= 0
+    \end{align}
+    \end{equation}
+\end{enumerate}
+Next, for normalized
+\begin{enumerate}
+    \item for $H_{+}$ 
+    Through similar way, you can easily find,     \begin{equation}
+         (H_{+},H_{+}) = 1
+     \end{equation}
+    \item for $H_{-}$ Still, you will find,
+     \begin{equation}
+         (H_{-},H_{-}) = 1
+     \end{equation}
+\end{enumerate}
+Thankfully, we can finally conclude and integrate our results into answers,
+\begin{equation}
+\begin{split}
+    for\ (i = j) \space \rightarrow|v_i\rangle\langle v_j|\\
+    for\ (i \neq j)\rightarrow H_{+} or\ H_{-}
+\end{split}
+\end{equation}
+
+\end{document}

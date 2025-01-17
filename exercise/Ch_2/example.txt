@@ -1,1 +1,0 @@
-This is a example used to help construct data structure
