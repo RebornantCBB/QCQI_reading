@@ -50,12 +50,20 @@ Note:
 **Anyone can join this reading, but must obey above-mentioned rules**
 
 # Guidelines for Latex
-1. Use `our template` as a startpoint to create solutions.
-2. Main package we use
+1. For Writing solution, please apply `solution_template` to maintain format-wise tidiness and benefit us to intergrate your solution into Ultimate collection(jsut a cominaiton of all existing solution in every chapter). And note that **DO NOT** use `\sectoin{Exercise xx}` to lable the exercise you are working with. Use `\paragragh{Exercise xx}\` instead.
+  - In addition, for those who is confused how to use the `solution_template` we offered, please follow below steps.
+     - 1. **Download** `solution_template.zip` file in [this repository](https://github.com/RebornantCBB/QCQI_reading)
+     - 2. Go to [Overleaf](https://www.overleaf.com/), click **New Project** buttom and choose **Upload Project**
+     - 3. Drag `solution_template.zip` in and you are complete
+2. In order to intergrate all the solutions into one ultimate collection smoothly, **please follow** `submit template` before submit your solution through PR, key points comment:
+  - **Remove all preamble** such as `\use package`, `\make title`,  `\begin{document}`, `\end{document}` and so on.
+  - Clearly **label and seperate** each exercise through `\paragraph{Exercise xx}`
+  - **Rename** your main(most often) in accord with `.tex` file name scheme listed above.
+3. Main package we use
    - `amsmath` for equation alignment
    - `braket` to write dirac notation efficiently. More infos see [here](https://ctan.org/tex-archive/macros/latex/contrib/braket?lang=en)
    - `tikz` or `quantikz` to draw specific ciruit as you wish. More infos see [here](https://ctan.org/pkg/quantikz?lang=en)
-3. If you are using other packages or template which may lead to output pdf far difference than our template, please contact the administrators such as *RebornantCBB*. 
+4. If you are using other packages or template which may lead to output pdf far difference than our template, please contact the administrators such as *RebornantCBB*. 
 
 # Critical Announcements
 
