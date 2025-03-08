@@ -67,5 +67,5 @@ Note:
 
 # Critical Announcements
 
-Each of the meeting will be recorded through OBS or any other software which is capable of completing exactly the same task. And would be accessible on [bilbli](https://space.bilibili.com/355115586/channel/series) or [youtube](https://www.youtube.com/playlist?list=PL2Z3HQoCH1y3LrzD0p2FtgPqIxYzGuS8J).
+Each of the meeting will be recorded through OBS or any other software which is capable of completing exactly the same task. And would be accessible on [bilbli](https://space.bilibili.com/355115586/channel/series) or [youtube](https://www.youtube.com/@Joe-bk4hq/playlists).
  
